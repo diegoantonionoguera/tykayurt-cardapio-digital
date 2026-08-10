@@ -19,21 +19,23 @@
 
 @media(max-width:720px){
   :root{--header-h:72px}
+  body{overflow-x:clip}
   .container{width:min(100% - 28px,var(--container))}
   .section-pad{padding:62px 0}
   .brand img{width:122px;height:48px}
   .header-inner{gap:10px}
   .header-actions{margin-left:auto}
   .hero{padding-top:28px}
+  .hero-grid,.hero-copy,.hero-actions,.trust-grid,.header-inner,.header-actions{min-width:0}
   .hero-grid{gap:20px}
-  .hero-copy h1{font-size:clamp(3rem,14vw,4.8rem);line-height:.95}
+  .hero-copy h1{font-size:clamp(2.8rem,12vw,4.2rem);line-height:.95}
   .hero-actions{display:grid;grid-template-columns:1fr 1fr}
+  .hero-actions .btn{width:100%;min-width:0;padding-inline:12px}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
-  .trust-grid article{padding:12px}
+  .trust-grid article{min-width:0;padding:12px}
   .hero-product{min-height:410px}
-  .hero-product-showcase{inset:4% -14% 0}
+  .hero-pot-morango{width:58%;left:21%;top:18%}.hero-pot-abacaxi{width:43%;left:-2%;top:32%}.hero-pot-amora{width:42%;right:-2%;top:31%}.hero-pot-ameixa{width:35%;right:12%;top:3%}
   .orbit-1{width:310px;height:310px;left:12%;top:13%}.orbit-2{width:365px;height:365px;left:4%;top:7%}
-  .fruit-orb{font-size:1.7rem}.orb-pineapple{font-size:1.5rem}
   .product-grid{grid-template-columns:1fr;gap:14px}
   .product-card{display:grid;grid-template-columns:132px 1fr;min-height:190px}
   .product-media{height:100%;min-height:190px}
@@ -66,7 +68,7 @@
 
 @media(max-width:430px){
   .hero-product{min-height:350px}
-  .hero-product-showcase{inset:6% -20% 2%}
+  .hero-pot-morango{width:64%;left:18%;top:20%}.hero-pot-abacaxi{width:47%;left:-6%;top:34%}.hero-pot-amora{width:46%;right:-6%;top:33%}.hero-pot-ameixa{width:39%;right:9%;top:5%}
   .hero-badge{right:2%;bottom:4%;font-size:.62rem}.hero-badge b{font-size:1.1rem}
   .product-card{grid-template-columns:118px 1fr}
   .product-media{min-height:180px}
@@ -75,4 +77,38 @@
   .product-card p{font-size:.78rem}
   .size-pill{padding:6px 9px;font-size:.66rem}
   .combo-modal-head h2{font-size:2.2rem}
+  .checkout-choice-grid.payment-grid{grid-template-columns:1fr}
+  .checkout-choice-grid.payment-grid .checkout-choice span{justify-content:flex-start;padding-inline:13px}
+}
+
+@media(max-width:360px){
+  .container{width:min(100% - 20px,var(--container))}
+  .hero-copy h1{font-size:clamp(2.65rem,14vw,3.4rem)}
+  .hero-actions{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .hero-product{min-height:310px}
+  .hero-pot-morango{width:68%;left:16%;top:21%}.hero-pot-abacaxi{width:50%;left:-9%;top:35%}.hero-pot-amora{width:49%;right:-9%;top:34%}.hero-pot-ameixa{width:41%;right:8%;top:6%}
+  .product-card{grid-template-columns:1fr}
+  .product-media{height:230px;min-height:0}
+  .combo-selector{grid-template-columns:1fr;gap:4px}
+  .size-options{grid-template-columns:1fr}
+}
+
+@media(max-height:520px) and (orientation:landscape){
+  .hero-grid{grid-template-columns:1fr 1fr;align-items:center;padding-top:0}
+  .hero-copy{text-align:left}
+  .hero-copy h1{font-size:3rem}
+  .hero-lead{font-size:.9rem}
+  .hero-actions{display:flex;justify-content:flex-start;margin:18px 0}
+  .trust-grid{display:none}
+  .hero-product{min-height:340px}
+}
+
+@media(pointer:coarse){
+  .btn,.cart-button,.menu-button,.extra-add,.icon-btn{min-height:44px}
+  .menu-button{min-width:44px}
+}
+
+@media(hover:none){
+  .product-card:hover,.combo-card:hover,.trust-grid article:hover{transform:none}
 }

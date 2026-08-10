@@ -80,9 +80,10 @@
         <div class="hero-product reveal-group" data-parallax-root aria-label="Iogurtes TykaYurt nos sabores morango, abacaxi, amora e ameixa">
           <div class="hero-orbit orbit-1" aria-hidden="true"></div>
           <div class="hero-orbit orbit-2" aria-hidden="true"></div>
-          <figure class="hero-product-showcase reveal-item" data-parallax="5">
-            <img src="assets/hero/produtos-3d-v2.png" alt="Quatro iogurtes TykaYurt: morango, abacaxi, amora e ameixa" />
-          </figure>
+          <figure class="hero-pot hero-pot-morango reveal-item" data-parallax="5"><img src="assets/hero/pote-morango-3d-transparent.png" width="800" height="684" fetchpriority="high" alt="Iogurte TykaYurt de morango" /></figure>
+          <figure class="hero-pot hero-pot-abacaxi reveal-item" data-parallax="9"><img src="assets/hero/pote-abacaxi-3d-transparent.png" width="800" height="684" alt="Iogurte TykaYurt de abacaxi" /></figure>
+          <figure class="hero-pot hero-pot-amora reveal-item" data-parallax="7"><img src="assets/hero/pote-amora-3d-transparent.png" width="800" height="684" alt="Iogurte TykaYurt de amora" /></figure>
+          <figure class="hero-pot hero-pot-ameixa reveal-item" data-parallax="11"><img src="assets/hero/pote-ameixa-3d-transparent.png" width="800" height="684" alt="Iogurte TykaYurt de ameixa" /></figure>
           <span class="hero-badge reveal-item">Mais pedido <b>Morango</b></span>
         </div>
       </div>
@@ -212,8 +213,26 @@
     </div>
     <div class="cart-items" data-cart-items></div>
     <div class="cart-summary">
-      <div class="cart-total-row"><span>Total conhecido</span><strong data-cart-total>R$ 0,00</strong></div>
+      <div class="cart-total-row"><span>Valor do pedido</span><strong data-cart-total>R$ 0,00</strong></div>
       <p class="cart-note" data-cart-note hidden>Há itens individuais cujo preço ainda será confirmado no WhatsApp.</p>
+      <div class="checkout-options">
+        <fieldset class="checkout-fieldset" data-checkout-group="fulfillment">
+          <legend>Como você quer receber?</legend>
+          <div class="checkout-choice-grid">
+            <label class="checkout-choice"><input type="radio" name="fulfillment" value="Entrega"><span>🛵 <strong>Entrega</strong></span></label>
+            <label class="checkout-choice"><input type="radio" name="fulfillment" value="Retirada"><span>📍 <strong>Retirada</strong></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="checkout-fieldset" data-checkout-group="payment">
+          <legend>Forma de pagamento</legend>
+          <div class="checkout-choice-grid payment-grid">
+            <label class="checkout-choice"><input type="radio" name="payment" value="Pix"><span><strong>Pix</strong></span></label>
+            <label class="checkout-choice"><input type="radio" name="payment" value="Débito/Crédito"><span><strong>Débito/Crédito</strong></span></label>
+            <label class="checkout-choice"><input type="radio" name="payment" value="Dinheiro"><span><strong>Dinheiro</strong></span></label>
+          </div>
+        </fieldset>
+        <p class="checkout-error" data-checkout-error role="alert" hidden></p>
+      </div>
       <button class="btn btn-primary btn-full" data-action="checkout-whatsapp">Finalizar pelo WhatsApp</button>
       <button class="btn btn-ghost btn-full" data-action="clear-cart">Limpar pedido</button>
     </div>

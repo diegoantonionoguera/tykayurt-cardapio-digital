@@ -9,7 +9,14 @@
     revealTargets.forEach(el=>observer.observe(el));
   }
   const header=document.querySelector('[data-header]');
-  const onScroll=()=>header?.classList.toggle('is-scrolled',scrollY>18);
+  let scrollFrame=0;
+  const onScroll=()=>{
+    if(scrollFrame)return;
+    scrollFrame=requestAnimationFrame(()=>{
+      header?.classList.toggle('is-scrolled',scrollY>18);
+      scrollFrame=0;
+    });
+  };
   onScroll(); addEventListener('scroll',onScroll,{passive:true});
   const sections=[...document.querySelectorAll('[data-section]')];
   const links=[...document.querySelectorAll('[data-nav-link]')];

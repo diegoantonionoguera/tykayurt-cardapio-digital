@@ -9,6 +9,7 @@ button:disabled{cursor:not-allowed}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,p{margin-top:0}
 h1,h2{font-family:var(--font-display);font-weight:400}
+h3,h4,h5,h6,.eyebrow,.hero-lead,.section-heading p{font-family:var(--font-body)}
 ::selection{background:rgba(215,39,114,.18)}
 .container{width:min(var(--container),calc(100% - 40px));margin-inline:auto}
 .section-pad{padding:84px 0;position:relative}

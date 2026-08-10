@@ -6,7 +6,9 @@
     activeSize:null,
     productQty:1,
     activeCombo:null,
-    comboSelections:[]
+    comboSelections:[],
+    fulfillment:'',
+    payment:''
   };
 
   const $=(s,r=document)=>r.querySelector(s);
@@ -100,6 +102,7 @@
     }
     $('[data-cart-total]').textContent=money(knownTotal());
     $('[data-cart-note]').hidden=!hasUnknown();
+    const checkout=$('[data-action="checkout-whatsapp"]');if(checkout)checkout.disabled=!c;
     persist();
   }
 
@@ -192,6 +195,13 @@
   }
 
   document.addEventListener('change',e=>{
+    const checkoutInput=e.target.closest('input[name="fulfillment"],input[name="payment"]');
+    if(checkoutInput){
+      state[checkoutInput.name]=checkoutInput.value;
+      checkoutInput.closest('[data-checkout-group]')?.classList.remove('has-error');
+      const error=$('[data-checkout-error]');if(error)error.hidden=true;
+      return;
+    }
     const select=e.target.closest('[data-combo-flavor]');if(!select)return;
     const i=Number(select.dataset.index);state.comboSelections[i]=select.value;
     select.closest('.combo-selector')?.classList.toggle('is-selected',Boolean(select.value));
@@ -223,8 +233,28 @@
     if(action==='add-extra')addExtra(btn.dataset.extra,btn);
     if(action==='cart-minus'){const i=Number(btn.dataset.index);state.cart[i].qty--;if(state.cart[i].qty<=0)state.cart.splice(i,1);updateCartUI()}
     if(action==='cart-plus'){state.cart[Number(btn.dataset.index)].qty++;updateCartUI()}
-    if(action==='clear-cart'){state.cart=[];updateCartUI();showToast('Pedido limpo')}
-    if(action==='checkout-whatsapp')window.TYKA_WHATSAPP.open({cart:state.cart,useCart:true,number:data.whatsappNumber});
+    if(action==='clear-cart'){
+      state.cart=[];state.fulfillment='';state.payment='';
+      $$('input[name="fulfillment"],input[name="payment"]').forEach(input=>input.checked=false);
+      $$('[data-checkout-group]').forEach(group=>group.classList.remove('has-error'));
+      const error=$('[data-checkout-error]');if(error)error.hidden=true;
+      updateCartUI();showToast('Pedido limpo');
+    }
+    if(action==='checkout-whatsapp'){
+      if(!state.cart.length){showToast('Adicione um item ao pedido');return}
+      const missing=[];
+      if(!state.fulfillment)missing.push('entrega ou retirada');
+      if(!state.payment)missing.push('forma de pagamento');
+      if(missing.length){
+        const error=$('[data-checkout-error]');
+        error.textContent=`Escolha ${missing.join(' e ')}.`;error.hidden=false;
+        if(!state.fulfillment)$('[data-checkout-group="fulfillment"]').classList.add('has-error');
+        if(!state.payment)$('[data-checkout-group="payment"]').classList.add('has-error');
+        $('[data-checkout-group].has-error input')?.focus();
+        return;
+      }
+      window.TYKA_WHATSAPP.open({cart:state.cart,useCart:true,number:data.whatsappNumber,order:{fulfillment:state.fulfillment,payment:state.payment}});
+    }
     if(action==='open-whatsapp')window.TYKA_WHATSAPP.open({cart:state.cart,useCart:false,number:data.whatsappNumber});
   });
 

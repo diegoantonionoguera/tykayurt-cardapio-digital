@@ -16,7 +16,10 @@
 @keyframes barIn{from{opacity:0;transform:translate(-50%,28px)}to{opacity:1;transform:translate(-50%,0)}}
 @keyframes toastIn{from{opacity:0;transform:translate(-50%,14px)}to{opacity:1;transform:translate(-50%,0)}}
 @keyframes blobFloat{0%,100%{transform:rotate(0deg) scale(1)}50%{transform:rotate(8deg) scale(1.04)}}
-@keyframes productDrift{0%,100%{transform:translate3d(0,0,0) rotateX(0deg)}50%{transform:translate3d(0,-10px,0) rotateX(1deg)}}
+@keyframes potFloatA{0%,100%{transform:translate3d(0,0,18px) rotate(-1deg)}50%{transform:translate3d(0,-13px,28px) rotate(1deg)}}
+@keyframes potFloatB{0%,100%{transform:translate3d(0,2px,0) rotate(-5deg)}50%{transform:translate3d(-4px,-9px,12px) rotate(-3deg)}}
+@keyframes potFloatC{0%,100%{transform:translate3d(0,-2px,8px) rotate(5deg)}50%{transform:translate3d(5px,-16px,18px) rotate(3deg)}}
+@keyframes potFloatD{0%,100%{transform:translate3d(0,0,-6px) rotate(3deg)}50%{transform:translate3d(-3px,-10px,4px) rotate(1deg)}}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
