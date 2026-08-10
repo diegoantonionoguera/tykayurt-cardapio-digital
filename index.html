@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8f6f3" />
+  <meta name="description" content="Cardápio digital TykaYurt — iogurtes artesanais em Curitiba. Morango, abacaxi, amora e ameixa, combos e acompanhamentos." />
+  <meta property="og:title" content="TykaYurt | Cardápio digital" />
+  <meta property="og:description" content="Iogurte de verdade, feito com amor. Escolha sabores, combos e acompanhamentos e envie seu pedido pelo WhatsApp." />
+  <meta property="og:type" content="website" />
+  <title>TykaYurt | Cardápio Digital</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#cardapio">Ir para o cardápio</a>
+
+  <header class="site-header" id="topo" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="#topo" aria-label="TykaYurt — início">
+        <img src="assets/brand/logo.webp" alt="TykaYurt — Delicie-se sem culpa" />
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#cardapio" data-nav-link>Cardápio</a>
+        <a href="#combos" data-nav-link>Combos</a>
+        <a href="#acompanhamentos" data-nav-link>Acompanhamentos</a>
+        <a href="#rotina" data-nav-link>Rotina</a>
+        <a href="#entrega" data-nav-link>Entrega</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary desktop-whatsapp" data-action="open-whatsapp" data-track="header_whatsapp">Peça no WhatsApp</button>
+        <button class="cart-button" data-action="open-cart" aria-label="Abrir pedido">
+          <span class="cart-icon" aria-hidden="true">🛍</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="menu-button" data-action="toggle-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" data-mobile-nav aria-label="Navegação mobile">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#combos">Combos</a>
+      <a href="#acompanhamentos">Acompanhamentos</a>
+      <a href="#rotina">Rotina TykaYurt</a>
+      <a href="#entrega">Entrega</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-pad" aria-labelledby="hero-title">
+      <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal-group">
+          <span class="eyebrow reveal-item">Iogurte artesanal • Curitiba</span>
+          <h1 id="hero-title" class="reveal-item">Iogurte de <em>verdade,</em><br>feito com amor.</h1>
+          <p class="hero-lead reveal-item">Natural, cremoso e artesanal. Sem conservantes, com fruta de verdade e ingredientes selecionados para deixar cada colherada especial.</p>
+          <div class="hero-actions reveal-item">
+            <a class="btn btn-primary" href="#cardapio" data-track="hero_menu">Ver cardápio</a>
+            <button class="btn btn-secondary" data-action="open-whatsapp" data-track="hero_whatsapp">Pedir agora</button>
+          </div>
+
+          <div class="trust-grid reveal-item" aria-label="Diferenciais TykaYurt">
+            <article><span aria-hidden="true">🌿</span><strong>100% natural</strong></article>
+            <article><span aria-hidden="true">⚗️</span><strong>sem conservantes</strong></article>
+            <article><span aria-hidden="true">🍓</span><strong>fruta de verdade</strong></article>
+            <article><span aria-hidden="true">🛵</span><strong>entrega local</strong></article>
+          </div>
+        </div>
+
+        <div class="hero-product reveal-group" data-parallax-root aria-label="Produtos TykaYurt">
+          <span class="fruit-orb orb-strawberry" data-parallax="14" aria-hidden="true">🍓</span>
+          <span class="fruit-orb orb-berry" data-parallax="8" aria-hidden="true">🫐</span>
+          <span class="fruit-orb orb-pineapple" data-parallax="11" aria-hidden="true">🍍</span>
+          <div class="hero-orbit orbit-1" aria-hidden="true"></div>
+          <div class="hero-orbit orbit-2" aria-hidden="true"></div>
+          <figure class="hero-card hero-main reveal-item" data-parallax="4">
+            <img src="assets/products/morango.webp" alt="Iogurte TykaYurt de morango" />
+          </figure>
+          <figure class="hero-card hero-left reveal-item" data-parallax="7">
+            <img src="assets/products/abacaxi.webp" alt="Iogurte TykaYurt de abacaxi" />
+          </figure>
+          <figure class="hero-card hero-right reveal-item" data-parallax="5">
+            <img src="assets/products/ameixa.webp" alt="Iogurte TykaYurt de ameixa" />
+          </figure>
+          <span class="hero-badge reveal-item">Mais pedido <b>Morango</b></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog section-pad" id="cardapio" data-section="cardapio">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Sabores</span>
+          <h2>Nosso <em>Cardápio</em></h2>
+          <p>Escolha seu sabor, selecione 250 ml ou 500 ml e monte o pedido do seu jeito.</p>
+        </div>
+        <div class="product-grid stagger-grid" id="productGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="featured section-pad" aria-label="Morango, carro-chefe TykaYurt">
+      <div class="container featured-card reveal">
+        <div class="featured-copy">
+          <span class="pill">🍓 Mais pedido</span>
+          <h2>Morango</h2>
+          <p>Iogurte natural com geleia de morango. O sabor que representa a TykaYurt e abre o apetite logo no primeiro olhar.</p>
+          <ul class="feature-list">
+            <li>Fruta de verdade</li>
+            <li>Textura cremosa</li>
+            <li>Disponível em 250 ml e 500 ml</li>
+          </ul>
+          <div class="featured-actions">
+            <button class="btn btn-primary" data-product="morango" data-action="open-product" data-track="featured_morango">Escolher tamanho</button>
+            <button class="btn btn-ghost" data-action="open-whatsapp">Falar no WhatsApp</button>
+          </div>
+        </div>
+        <div class="featured-image-wrap">
+          <div class="featured-shape" aria-hidden="true"></div>
+          <img src="assets/products/morango.webp" alt="Morango, carro-chefe TykaYurt" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="combos section-pad" id="combos" data-section="combos">
+      <div class="container">
+        <div class="section-heading left-heading reveal">
+          <span class="eyebrow">Combos especiais</span>
+          <h2>Mais sabor, <em>mais economia</em></h2>
+          <p>Escolha seus sabores. Pode repetir. O progresso do combo mostra exatamente quanto falta para concluir.</p>
+        </div>
+        <div class="combo-grid stagger-grid" id="comboGrid"></div>
+      </div>
+    </section>
+
+    <section class="extras section-pad" id="acompanhamentos" data-section="acompanhamentos">
+      <div class="container">
+        <div class="section-heading left-heading reveal">
+          <span class="eyebrow">Acompanhamentos</span>
+          <h2>Complete <em>do seu jeito</em></h2>
+          <p>Um toque crocante para deixar seu TykaYurt ainda mais completo.</p>
+        </div>
+        <div class="extra-grid stagger-grid" id="extraGrid"></div>
+      </div>
+    </section>
+
+    <section class="routine section-pad" id="rotina" data-section="rotina">
+      <div class="container routine-card reveal">
+        <div class="routine-icon" aria-hidden="true">🗓️</div>
+        <div>
+          <span class="eyebrow">Fidelidade começa pelo hábito</span>
+          <h2>Monte sua rotina <em>TykaYurt</em></h2>
+          <p>Peça seu favorito toda semana. Mais praticidade, sabor e bem-estar no seu dia.</p>
+        </div>
+        <a class="btn btn-secondary" href="#combos">Ver combos</a>
+      </div>
+    </section>
+
+    <section class="delivery section-pad" id="entrega" data-section="entrega">
+      <div class="container delivery-card reveal">
+        <div class="delivery-icon" aria-hidden="true">🛵</div>
+        <div class="delivery-copy">
+          <span class="eyebrow">Entrega local</span>
+          <h2>Seu TykaYurt chegando fresquinho.</h2>
+          <p>Monte o pedido no cardápio e envie tudo pronto para o WhatsApp. Região, taxa e horário são confirmados no atendimento.</p>
+          <div class="delivery-mini">
+            <span>✓ Pedido fácil</span>
+            <span>✓ Atendimento local</span>
+            <span>✓ Feito com carinho</span>
+          </div>
+        </div>
+        <button class="btn btn-primary" data-action="open-whatsapp" data-track="delivery_whatsapp">Peça no WhatsApp</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/brand/logo.webp" alt="TykaYurt" loading="lazy" />
+        <p>Delicie-se sem culpa.</p>
+      </div>
+      <div>
+        <strong>Cardápio digital</strong>
+        <p>Morango • Abacaxi • Amora • Ameixa</p>
+      </div>
+      <div>
+        <strong>Pedido</strong>
+        <button class="footer-link" data-action="open-whatsapp">Abrir WhatsApp →</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cart-bar" data-mobile-cart hidden>
+    <div>
+      <strong data-mobile-cart-count>0 itens</strong>
+      <span data-mobile-cart-total>R$ 0,00</span>
+    </div>
+    <button data-action="open-cart">Ver pedido →</button>
+  </div>
+
+  <div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+  <div class="overlay" data-overlay hidden></div>
+
+  <aside class="drawer cart-drawer" data-cart-drawer aria-hidden="true" aria-label="Seu pedido">
+    <div class="drawer-header">
+      <div>
+        <span class="eyebrow">Seu pedido</span>
+        <h2>TykaYurt</h2>
+      </div>
+      <button class="icon-btn" data-action="close-cart" aria-label="Fechar pedido">×</button>
+    </div>
+    <div class="cart-items" data-cart-items></div>
+    <div class="cart-summary">
+      <div class="cart-total-row"><span>Total conhecido</span><strong data-cart-total>R$ 0,00</strong></div>
+      <p class="cart-note" data-cart-note hidden>Há itens individuais cujo preço ainda será confirmado no WhatsApp.</p>
+      <button class="btn btn-primary btn-full" data-action="checkout-whatsapp">Finalizar pelo WhatsApp</button>
+      <button class="btn btn-ghost btn-full" data-action="clear-cart">Limpar pedido</button>
+    </div>
+  </aside>
+
+  <div class="modal" data-product-modal hidden role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <div class="modal-card product-modal-card">
+      <button class="icon-btn modal-close" data-action="close-product" aria-label="Fechar">×</button>
+      <div class="modal-product-media" data-product-media></div>
+      <div class="modal-product-content">
+        <span class="eyebrow" data-product-kicker>Escolha seu pote</span>
+        <h2 id="productModalTitle" data-product-name></h2>
+        <p data-product-description></p>
+        <div class="size-options" data-size-options></div>
+        <div class="qty-row">
+          <span>Quantidade</span>
+          <div class="qty-control">
+            <button data-action="qty-minus" aria-label="Diminuir">−</button>
+            <strong data-product-qty>1</strong>
+            <button data-action="qty-plus" aria-label="Aumentar">+</button>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-full" data-action="add-product">Adicionar ao pedido</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" data-combo-modal hidden role="dialog" aria-modal="true" aria-labelledby="comboModalTitle">
+    <div class="modal-card combo-modal-card">
+      <button class="icon-btn modal-close" data-action="close-combo" aria-label="Fechar">×</button>
+      <div class="combo-modal-head">
+        <span class="eyebrow">Monte seu combo</span>
+        <h2 id="comboModalTitle" data-combo-name></h2>
+        <p data-combo-description></p>
+        <strong class="combo-modal-price" data-combo-price></strong>
+      </div>
+
+      <div class="combo-progress-wrap">
+        <div class="combo-progress-label"><span data-combo-progress-text>0 de 0 selecionados</span><span data-combo-progress-percent>0%</span></div>
+        <div class="combo-progress-track"><span data-combo-progress-bar></span></div>
+        <div class="combo-dots" data-combo-dots aria-hidden="true"></div>
+      </div>
+
+      <div class="combo-selectors" data-combo-selectors></div>
+      <button class="btn btn-primary btn-full" data-action="add-combo" data-combo-add disabled>Adicionar combo ao pedido</button>
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/combos.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
