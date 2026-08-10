@@ -23,6 +23,9 @@
   --shadow-soft:0 14px 38px rgba(62,20,60,.08);
   --shadow-card:0 14px 40px rgba(61,26,55,.10);
   --shadow-hover:0 22px 55px rgba(61,26,55,.16);
+  --shadow-button:0 10px 24px rgba(129,0,128,.18),0 2px 5px rgba(67,18,62,.10);
+  --shadow-button-hover:0 16px 34px rgba(129,0,128,.25),0 4px 10px rgba(67,18,62,.10);
+  --focus-ring:0 0 0 3px #fff,0 0 0 6px rgba(129,0,128,.48);
 
   --container:1160px;
   --header-h:86px;
@@ -31,5 +34,5 @@
   --motion-normal:340ms;
   --motion-slow:620ms;
   --ease-out:cubic-bezier(.22,.72,.22,1);
-  --ease-spring:cubic-bezier(.2,1.25,.3,1);
+  --ease-spring:cubic-bezier(.16,1,.3,1);
 }

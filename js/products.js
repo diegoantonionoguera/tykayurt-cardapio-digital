@@ -1,5 +1,5 @@
 window.TYKA_DATA = {
-  whatsappNumber: "", // preencher com DDI + DDD + número, ex.: 5541999999999
+  whatsappNumber: "554191731323",
   locationLabel: "Curitiba",
   products: [
     {
