@@ -6,7 +6,7 @@ window.TYKA_DATA = {
       id: "morango",
       name: "Morango",
       description: "Iogurte natural com geleia de morango.",
-      image: "assets/products/morango.webp",
+      image: "assets/products/morango.svg",
       accent: "#d72772",
       soft: "#fff0f6",
       featured: true,
@@ -19,7 +19,7 @@ window.TYKA_DATA = {
       id: "abacaxi",
       name: "Abacaxi",
       description: "Iogurte natural com geleia de abacaxi.",
-      image: "assets/products/abacaxi.webp",
+      image: "assets/products/abacaxi.svg",
       accent: "#d89c00",
       soft: "#fff8dc",
       sizes: [
@@ -44,7 +44,7 @@ window.TYKA_DATA = {
       id: "ameixa",
       name: "Ameixa",
       description: "Iogurte natural com geleia de ameixa.",
-      image: "assets/products/ameixa.webp",
+      image: "assets/products/ameixa.svg",
       accent: "#5d145f",
       soft: "#f5edf5",
       sizes: [
